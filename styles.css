@@ -63,12 +63,62 @@ h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: 0; }
 .card h3 { margin-top: 0; margin-bottom: 0.45rem; }
 .card .type { color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; }
 .card p { color: var(--muted); margin-bottom: 0; }
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.6rem 1rem;
-  padding-left: 1.2rem;
+/* Section subtitles */
+.section-subtitle { margin-top: -0.4rem; margin-bottom: 1.2rem; }
+
+/* Project card status badge */
+.card .status {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.4rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(138, 180, 255, 0.08);
 }
+.card-links { margin-top: 0.6rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.card-links a {
+  color: var(--accent);
+  font-size: 0.82rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.card-links a:hover { border-bottom-color: var(--accent); }
+
+/* Skill category grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.skill-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 1.2rem;
+}
+.skill-card h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 0 0 0.6rem;
+}
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skill-card li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.skill-card li:last-child { border-bottom: none; }
 .muted { color: var(--muted); }
 .site-footer {
   border-top: 1px solid var(--border);

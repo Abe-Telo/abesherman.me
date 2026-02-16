@@ -1,6 +1,6 @@
 {
   "name": "Abe Sherman",
-  "headline": "Founder/Operator building practical software + telecom systems",
+  "headline": "Founder/operator + hands-on builder shipping real systems at the intersection of telecom, ops, and software.",
   "location": "New York, USA",
   "roles": [
     {
@@ -10,11 +10,17 @@
       "summary": "Business VoIP and communications workflows for teams."
     }
   ],
+  "about": [
+    "I'm a founder/operator and hands-on builder who ships real systems, not just prototypes. My work sits at the intersection of business VoIP/telecom operations, customer onboarding + billing + provisioning workflows, internal tools and portals, web infrastructure + automation, and compliance-minded operational design.",
+    "My primary company is Telocall LLC, where I serve as CEO/Owner, delivering hosted PBX workflows, device deployment patterns, and customer-facing telecom operations. I also build product software, including JBond.app.",
+    "I design onboarding and lifecycle automations — plan selection, DID acquisition, billing events, suspension/reactivation logic — to reduce support load and speed up activation. I lead platform and vendor transitions while maintaining continuity for customers and internal operations."
+  ],
   "ventures": [
     {
       "name": "Telocall",
       "type": "Company",
-      "description": "Business VoIP + telecom solutions and communication workflows."
+      "description": "Business VoIP + telecom solutions and communication workflows.",
+      "url": "https://telocall.com"
     },
     {
       "name": "Tavnit / TDev",
@@ -24,30 +30,152 @@
     {
       "name": "JBond.app",
       "type": "Product",
-      "description": "Relationship/communication AI web app with public and member areas."
+      "description": "Relationship/communication AI web app with public and member areas.",
+      "url": "https://jbond.app"
     }
   ],
-  "skills": [
-    "VoIP / telecom systems",
-    "Web apps & internal portals",
-    "Automation & integrations",
-    "Linux/server administration",
-    "Operational systems design"
+  "projects": [
+    {
+      "title": "Telocall Customer Comms Platform",
+      "status": "Implemented & Ongoing",
+      "description": "Built and operate a real VoIP offering with customer-facing positioning, features, and onboarding workflows. Designed operational flows around portals, access, and customer support scaling. Managed platform/partner transitions and user experience impact.",
+      "links": ["https://telocall.com"]
+    },
+    {
+      "title": "Portal & Billing Workflow Automation",
+      "status": "Implemented & Ongoing",
+      "description": "Defined flows for suspension to immediate reactivation after payment (self-serve). Built structured onboarding logic for existing users and new signups: check provider, select product, select plan, DID choices. Architected layered roles and approval workflows (admin/reseller/client).",
+      "links": []
+    },
+    {
+      "title": "Documentation & Training Platform",
+      "status": "Implemented",
+      "description": "Built a categorized internal + client education library covering support docs, technical training, end-user docs, and policies. Created repeatable FAQ and runbook content patterns for scalable support.",
+      "links": ["https://telocall.com/articles/"]
+    },
+    {
+      "title": "WordPress/Divi Landing Pages",
+      "status": "Implemented",
+      "description": "Built full landing pages for telecom and related projects using WordPress + Divi. Structured navigation, shelves/categories, and onboarding guidance for users.",
+      "links": []
+    },
+    {
+      "title": "Windows Deployment Automation",
+      "status": "Implemented",
+      "description": "Created step-by-step Windows install workflows using an OSDCloud approach. Produced repeatable instructions + branded WinPE launch behavior to reduce manual steps and make deployments consistent.",
+      "links": []
+    },
+    {
+      "title": "Internal Tracking & Inventory Tooling",
+      "status": "Implemented & Evolving",
+      "description": "Designed a workflow to scan internal serial numbers alongside order records (barcode-first). Built modular Node.js structure patterns (server + module + browser JS separation).",
+      "links": []
+    },
+    {
+      "title": "Billing Platform Setup",
+      "status": "Implemented",
+      "description": "Stood up InvoicePlane-style billing stack and handled PHP version/extension constraints. Configured vhosts and separated apps (billing app vs WordPress site architecture).",
+      "links": []
+    },
+    {
+      "title": "CRM Integration & Data Model Design",
+      "status": "Planning Complete",
+      "description": "Defined custom objects and fields for a Salesforce integration strategy (structured schema thinking). Designed call-history-style data capture patterns for CRM linkage.",
+      "links": []
+    },
+    {
+      "title": "Hardware & Endpoint Configuration",
+      "status": "Implemented",
+      "description": "Dial plan logic for endpoints like ATAs. Vendor provisioning integration experimentation (GDMS-style API direction).",
+      "links": ["https://github.com/Abe-Telo"]
+    },
+    {
+      "title": "JBond.app Product Site",
+      "status": "Implemented & Ongoing",
+      "description": "Built public marketing pages, roadmap, terms/privacy structure. Product thinking: consent boundaries, relationship tooling UX, and practical support systems.",
+      "links": ["https://jbond.app"]
+    }
+  ],
+  "skillCategories": [
+    {
+      "category": "Telecom / VoIP Engineering & Operations",
+      "skills": [
+        "Hosted PBX, call routing, extensions, call flows",
+        "Device provisioning (Grandstream/Yealink/Polycom ecosystems)",
+        "Dial plan logic and endpoint configuration",
+        "Multi-platform softphone + desk phone + browser calling",
+        "Platform migrations and customer impact handling"
+      ]
+    },
+    {
+      "category": "Product & Portal Design",
+      "skills": [
+        "Prospect-to-onboarding flow design",
+        "Role-based portals (admin/reseller/client)",
+        "Quote versioning, contract customization, digital signatures",
+        "Billing logic (monthly/subscription/yearly/one-time)",
+        "Suspension/reactivation automation"
+      ]
+    },
+    {
+      "category": "Web Development",
+      "skills": [
+        "WordPress + Divi landing pages",
+        "Knowledge base / documentation systems",
+        "Public + private web app areas (auth, dashboards, admin)",
+        "SEO basics: robots, sitemaps, crawl control"
+      ]
+    },
+    {
+      "category": "Backend & Automation",
+      "skills": [
+        "Node.js services and modular architecture",
+        "APIs for provisioning and integration",
+        "Scripting for system setup and repeatable deployments"
+      ]
+    },
+    {
+      "category": "Systems / DevOps / Infrastructure",
+      "skills": [
+        "Linux servers (Debian/Ubuntu), vhosts, backups",
+        "Plugin/deprecation handling and rollback-friendly changes",
+        "Performance awareness (RAM/CPU + DB tuning)"
+      ]
+    },
+    {
+      "category": "Email & DNS Deliverability",
+      "skills": [
+        "DKIM verification and hosting provider troubleshooting",
+        "Header investigation and encryption diagnostics",
+        "Email plumbing impact analysis"
+      ]
+    },
+    {
+      "category": "Business Operations & Compliance",
+      "skills": [
+        "A2P/10DLC compliance thinking",
+        "Contracting workflows, role boundaries, access control",
+        "Vendor transitions and customer-facing continuity"
+      ]
+    },
+    {
+      "category": "Documentation & Training",
+      "skills": [
+        "Internal docs and client-facing FAQs",
+        "Step-by-step runbooks (imaging, OS deployment, setup guides)",
+        "Structured knowledge categories for support scaling"
+      ]
+    }
   ],
   "links": [
     { "label": "GitHub", "url": "https://github.com/Abe-Telo" },
-    { "label": "LinkedIn (Telocall)", "url": "https://www.linkedin.com/in/abesherman" },
-    { "label": "Telocall Articles", "url": "https://telocall.com/articles/" }
-  ],
-  "writing": [
-    {
-      "source": "Telocall",
-      "url": "https://telocall.com/articles/",
-      "note": "Telecom/VoIP-related writing."
-    }
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/abesherman" },
+    { "label": "Telocall", "url": "https://telocall.com" },
+    { "label": "Articles", "url": "https://telocall.com/articles/" },
+    { "label": "JBond.app", "url": "https://jbond.app" }
   ],
   "contact": {
-    "preferred": "Use site contact form",
-    "notes": "Avoid publishing phone/email directly on the homepage to reduce spam."
+    "preferred": "Use the contact form or reach out via LinkedIn.",
+    "notes": "Phone and email are not listed publicly to reduce spam."
   }
 }

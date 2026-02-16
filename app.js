@@ -3,12 +3,14 @@ const setText = (id, text) => {
   if (el) el.textContent = text || "";
 };
 
-const link = ({ label, url }) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+const link = ({ label, url }) =>
+  `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
 
 async function init() {
   const res = await fetch("./data/profile.json");
   const profile = await res.json();
 
+  // Hero
   setText("hero-name", profile.name);
   setText("hero-headline", profile.headline);
   setText("hero-location", profile.location);
@@ -17,32 +19,52 @@ async function init() {
   const heroLinks = document.getElementById("hero-links");
   heroLinks.innerHTML = profile.links.map(link).join("");
 
+  // About — rich multi-paragraph
   const about = document.getElementById("about-content");
-  about.innerHTML = `
-    <p>I’m ${profile.name} — a founder/operator focused on building practical systems that help businesses communicate, sell, and support customers.</p>
-    <p>I lead <strong>${profile.roles[0].org}</strong> as ${profile.roles[0].title}, delivering business VoIP and communication workflows.</p>
-    <p>Alongside telecom, I build software tools and internal portals that automate billing, onboarding, contracts, and support workflows.</p>
-  `;
+  about.innerHTML = profile.about.map((p) => `<p>${p}</p>`).join("");
 
+  // Projects — detailed cards with status and links
   const grid = document.getElementById("projects-grid");
-  grid.innerHTML = profile.ventures
-    .map(
-      (venture) => `
+  grid.innerHTML = profile.projects
+    .map((project) => {
+      const linksHtml =
+        project.links && project.links.length
+          ? `<div class="card-links">${project.links
+              .map(
+                (url) =>
+                  `<a href="${url}" target="_blank" rel="noopener noreferrer">${new URL(url).hostname.replace("www.", "")}</a>`
+              )
+              .join("")}</div>`
+          : "";
+      return `
       <article class="card">
-        <p class="type">${venture.type}</p>
-        <h3>${venture.name}</h3>
-        <p>${venture.description}</p>
+        <span class="status">${project.status}</span>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        ${linksHtml}
       </article>
-    `,
+    `;
+    })
+    .join("");
+
+  // Skills — categorized grid
+  const skillsGrid = document.getElementById("skills-grid");
+  skillsGrid.innerHTML = profile.skillCategories
+    .map(
+      (cat) => `
+      <div class="skill-card">
+        <h3>${cat.category}</h3>
+        <ul>${cat.skills.map((s) => `<li>${s}</li>`).join("")}</ul>
+      </div>
+    `
     )
     .join("");
 
-  const skills = document.getElementById("skills-list");
-  skills.innerHTML = profile.skills.map((skill) => `<li>${skill}</li>`).join("");
-
+  // Contact
   setText("contact-preferred", profile.contact.preferred);
   setText("contact-notes", profile.contact.notes);
 
+  // Structured data (JSON-LD)
   const schema = document.createElement("script");
   schema.type = "application/ld+json";
   schema.textContent = JSON.stringify({
