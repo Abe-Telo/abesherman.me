@@ -1,0 +1,28 @@
+name: Abe Sherman
+headline: Founder/Operator — telecom + software systems
+location: New York, USA
+experience:
+  - company: Telocall LLC
+    title: CEO/Owner
+    start: 2021-09
+    end: present
+    highlights:
+      - Business VoIP solutions and communication workflows
+      - Customer operations systems and internal tooling
+links:
+  - label: GitHub
+    url: https://github.com/Abe-Telo
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/abesherman
+  - label: Telocall Articles
+    url: https://telocall.com/articles/
+projects:
+  - name: Tavnit / TDev
+    summary: Development branch for portals, automation, and white-label systems
+  - name: JBond.app
+    summary: Relationship/communication AI web app
+skills:
+  - VoIP / telecom
+  - Web apps & portals
+  - Automation & integrations
+  - Linux/server ops

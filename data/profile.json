@@ -1,0 +1,53 @@
+{
+  "name": "Abe Sherman",
+  "headline": "Founder/Operator building practical software + telecom systems",
+  "location": "New York, USA",
+  "roles": [
+    {
+      "title": "CEO/Owner",
+      "org": "Telocall LLC",
+      "start": "2021-09",
+      "summary": "Business VoIP and communications workflows for teams."
+    }
+  ],
+  "ventures": [
+    {
+      "name": "Telocall",
+      "type": "Company",
+      "description": "Business VoIP + telecom solutions and communication workflows."
+    },
+    {
+      "name": "Tavnit / TDev",
+      "type": "Venture",
+      "description": "Development-focused branch building portals, automation, and white-label systems."
+    },
+    {
+      "name": "JBond.app",
+      "type": "Product",
+      "description": "Relationship/communication AI web app with public and member areas."
+    }
+  ],
+  "skills": [
+    "VoIP / telecom systems",
+    "Web apps & internal portals",
+    "Automation & integrations",
+    "Linux/server administration",
+    "Operational systems design"
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/Abe-Telo" },
+    { "label": "LinkedIn (Telocall)", "url": "https://www.linkedin.com/in/abesherman" },
+    { "label": "Telocall Articles", "url": "https://telocall.com/articles/" }
+  ],
+  "writing": [
+    {
+      "source": "Telocall",
+      "url": "https://telocall.com/articles/",
+      "note": "Telecom/VoIP-related writing."
+    }
+  ],
+  "contact": {
+    "preferred": "Use site contact form",
+    "notes": "Avoid publishing phone/email directly on the homepage to reduce spam."
+  }
+}

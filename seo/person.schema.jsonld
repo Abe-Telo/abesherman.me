@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abe Sherman",
+  "url": "https://abesherman.me",
+  "sameAs": [
+    "https://github.com/Abe-Telo",
+    "https://www.linkedin.com/in/abesherman"
+  ],
+  "jobTitle": "CEO/Owner",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Telocall LLC"
+  }
+}
