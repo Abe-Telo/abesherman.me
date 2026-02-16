@@ -530,6 +530,96 @@ body {
 /* ── Muted ── */
 .muted { color: var(--muted); }
 
+/* ── Floating Chat Widget ── */
+.chat-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.chat-fab-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.chat-fab-toggle:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18), 0 3px 8px rgba(0,0,0,0.1);
+}
+.chat-fab-toggle svg {
+  transition: transform 0.25s;
+}
+.chat-fab.open .chat-fab-toggle svg {
+  transform: rotate(45deg);
+}
+.chat-fab-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+.chat-fab.open .chat-fab-menu {
+  display: flex;
+  animation: chatFadeIn 0.2s ease;
+}
+@keyframes chatFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-fab-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.chat-fab-item span {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.85rem;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.chat-fab-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+.chat-fab-item:hover .chat-fab-icon {
+  transform: scale(1.08);
+}
+.chat-fab-icon.messenger {
+  background: #0084ff;
+  color: #fff;
+}
+.chat-fab-icon.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
 /* ── Footer ── */
 .site-footer {
   border-top: 1px solid var(--border);
