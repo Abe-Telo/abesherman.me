@@ -11,7 +11,7 @@ async function init() {
   const profile = await res.json();
 
   // Hero
-  setText("hero-name", profile.name);
+  setText("hero-name", `Hey, I'm ${profile.name}`);
   setText("hero-headline", profile.headline);
   setText("hero-location", profile.location);
   setText("year", new Date().getFullYear());
@@ -19,11 +19,27 @@ async function init() {
   const heroLinks = document.getElementById("hero-links");
   heroLinks.innerHTML = profile.links.map(link).join("");
 
-  // About — rich multi-paragraph
+  // About
   const about = document.getElementById("about-content");
   about.innerHTML = profile.about.map((p) => `<p>${p}</p>`).join("");
 
-  // Projects — detailed cards with status and links
+  // Ventures
+  const venturesRow = document.getElementById("ventures-row");
+  venturesRow.innerHTML = profile.ventures
+    .map((v) => {
+      const tag = v.url ? "a" : "div";
+      const href = v.url ? ` href="${v.url}" target="_blank" rel="noopener noreferrer"` : "";
+      return `
+      <${tag} class="venture-card"${href}>
+        <span class="type">${v.type}</span>
+        <h3>${v.name}</h3>
+        <p>${v.description}</p>
+      </${tag}>
+    `;
+    })
+    .join("");
+
+  // Projects
   const grid = document.getElementById("projects-grid");
   grid.innerHTML = profile.projects
     .map((project) => {
@@ -47,7 +63,7 @@ async function init() {
     })
     .join("");
 
-  // Skills — categorized grid
+  // Skills
   const skillsGrid = document.getElementById("skills-grid");
   skillsGrid.innerHTML = profile.skillCategories
     .map(
@@ -63,6 +79,19 @@ async function init() {
   // Contact
   setText("contact-preferred", profile.contact.preferred);
   setText("contact-notes", profile.contact.notes);
+
+  // Contact quick links
+  const contactLinks = document.getElementById("contact-links");
+  const linkedin = profile.links.find((l) => l.label === "LinkedIn");
+  const github = profile.links.find((l) => l.label === "GitHub");
+  let contactLinksHtml = "";
+  if (linkedin) {
+    contactLinksHtml += `<a href="${linkedin.url}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`;
+  }
+  if (github) {
+    contactLinksHtml += `<a class="secondary" href="${github.url}" target="_blank" rel="noopener noreferrer">GitHub</a>`;
+  }
+  contactLinks.innerHTML = contactLinksHtml;
 
   // Structured data (JSON-LD)
   const schema = document.createElement("script");
@@ -82,6 +111,37 @@ async function init() {
     },
   });
   document.head.appendChild(schema);
+
+  // Fade-in animation on scroll
+  const fadeEls = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  fadeEls.forEach((el) => observer.observe(el));
+
+  // Mobile nav toggle
+  const toggle = document.querySelector(".nav-toggle");
+  const navList = document.querySelector(".nav ul");
+  if (toggle && navList) {
+    toggle.addEventListener("click", () => {
+      const isOpen = navList.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen);
+    });
+    navList.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        navList.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 }
 
 init().catch((err) => {
