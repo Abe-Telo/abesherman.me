@@ -76,22 +76,20 @@ async function init() {
     )
     .join("");
 
-  // Contact
-  setText("contact-preferred", profile.contact.preferred);
-  setText("contact-notes", profile.contact.notes);
-
   // Contact quick links
   const contactLinks = document.getElementById("contact-links");
-  const linkedin = profile.links.find((l) => l.label === "LinkedIn");
-  const github = profile.links.find((l) => l.label === "GitHub");
-  let contactLinksHtml = "";
-  if (linkedin) {
-    contactLinksHtml += `<a href="${linkedin.url}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`;
+  if (contactLinks) {
+    const linkedin = profile.links.find((l) => l.label === "LinkedIn");
+    const github = profile.links.find((l) => l.label === "GitHub");
+    let contactLinksHtml = `<a href="/contact.html">Get in Touch</a>`;
+    if (linkedin) {
+      contactLinksHtml += `<a class="secondary" href="${linkedin.url}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`;
+    }
+    if (github) {
+      contactLinksHtml += `<a class="secondary" href="${github.url}" target="_blank" rel="noopener noreferrer">GitHub</a>`;
+    }
+    contactLinks.innerHTML = contactLinksHtml;
   }
-  if (github) {
-    contactLinksHtml += `<a class="secondary" href="${github.url}" target="_blank" rel="noopener noreferrer">GitHub</a>`;
-  }
-  contactLinks.innerHTML = contactLinksHtml;
 
   // Structured data (JSON-LD)
   const schema = document.createElement("script");

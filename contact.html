@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf8f5" />
+    <title>Hire / Contact | Abe Sherman</title>
+    <meta
+      name="description"
+      content="Get in touch with Abe Sherman for telecom consulting, software projects, or collaboration opportunities."
+    />
+    <meta property="og:title" content="Hire / Contact | Abe Sherman" />
+    <meta
+      property="og:description"
+      content="Reach out for telecom consulting, software projects, or collaboration opportunities."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abesherman.me/contact" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="logo" href="/">Abe Sherman</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <ul>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#ventures">Ventures</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/contact.html" class="nav-active">Hire / Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container fade-in" aria-labelledby="contact-hero-title">
+        <h1 id="contact-hero-title">Let's Work Together</h1>
+        <p class="headline">Have a project in mind, need telecom consulting, or just want to connect? Fill out the form below and I'll get back to you.</p>
+      </section>
+
+      <section class="section container fade-in">
+        <div class="contact-form-wrapper">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New Contact from abesherman.me" />
+            <input type="hidden" name="from_name" value="abesherman.me Contact Form" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Your Name <span class="required" aria-label="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email <span class="required" aria-label="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry-type">What can I help with?</label>
+              <select id="inquiry-type" name="inquiry_type">
+                <option value="" disabled selected>Select a topic</option>
+                <option value="Telecom / VoIP Consulting">Telecom / VoIP Consulting</option>
+                <option value="Software Development">Software Development</option>
+                <option value="Hire / Freelance">Hire / Freelance</option>
+                <option value="Partnership / Collaboration">Partnership / Collaboration</option>
+                <option value="General Question">General Question</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="required" aria-label="required">*</span></label>
+              <textarea id="message" name="message" required rows="6" placeholder="Tell me about your project or how I can help..."></textarea>
+            </div>
+
+            <div class="form-group captcha-wrapper">
+              <div class="h-captcha" data-captcha="true"></div>
+            </div>
+
+            <button type="submit" class="form-submit" id="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display:none;">
+                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+                Sending...
+              </span>
+            </button>
+
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="contact-alt">
+            <h3>Other Ways to Reach Me</h3>
+            <p class="muted">Prefer a different channel? Connect with me on LinkedIn or check out my work on GitHub.</p>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/abesherman" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a class="secondary" href="https://github.com/Abe-Telo" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Abe Sherman &middot; Built with care in New York</small>
+      </div>
+    </footer>
+
+    <script>
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile nav toggle
+      const toggle = document.querySelector(".nav-toggle");
+      const navList = document.querySelector(".nav ul");
+      if (toggle && navList) {
+        toggle.addEventListener("click", () => {
+          const isOpen = navList.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", isOpen);
+        });
+        navList.querySelectorAll("a").forEach((a) => {
+          a.addEventListener("click", () => {
+            navList.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      // Fade-in animation
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+
+      // Form submission
+      const form = document.getElementById("contact-form");
+      const status = document.getElementById("form-status");
+      const submitBtn = document.getElementById("submit-btn");
+      const btnText = submitBtn.querySelector(".btn-text");
+      const btnLoading = submitBtn.querySelector(".btn-loading");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        btnText.style.display = "none";
+        btnLoading.style.display = "inline-flex";
+        status.className = "form-status";
+        status.textContent = "";
+
+        try {
+          const formData = new FormData(form);
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+          });
+          const data = await res.json();
+
+          if (data.success) {
+            status.textContent = "Message sent! I'll get back to you soon.";
+            status.classList.add("success");
+            form.reset();
+            // Reset hCaptcha if present
+            if (window.hcaptcha) window.hcaptcha.reset();
+          } else {
+            throw new Error(data.message || "Something went wrong.");
+          }
+        } catch (err) {
+          status.textContent = err.message || "Failed to send. Please try again or reach out via LinkedIn.";
+          status.classList.add("error");
+        } finally {
+          submitBtn.disabled = false;
+          btnText.style.display = "inline";
+          btnLoading.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
