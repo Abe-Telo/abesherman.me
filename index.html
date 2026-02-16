@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf8f5" />
     <title>Abe Sherman | Telecom + Software Systems</title>
     <meta
       name="description"
@@ -22,8 +23,16 @@
     <header class="site-header">
       <nav class="nav container" aria-label="Primary">
         <a class="logo" href="#home">Abe Sherman</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#ventures">Ventures</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -32,46 +41,50 @@
     </header>
 
     <main id="home">
-      <section class="hero container" aria-labelledby="hero-name">
-        <p class="eyebrow">Founder / Operator</p>
+      <section class="hero container fade-in" aria-labelledby="hero-name">
+        <span class="hero-wave" aria-hidden="true">&#x1F44B;</span>
         <h1 id="hero-name"></h1>
         <p id="hero-headline" class="headline"></p>
         <p id="hero-location" class="location"></p>
         <div class="hero-links" id="hero-links"></div>
       </section>
 
-      <section id="about" class="section container" aria-labelledby="about-title">
-        <h2 id="about-title">About</h2>
+      <section id="about" class="section container fade-in" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
         <div id="about-content" class="prose"></div>
       </section>
 
-      <section id="projects" class="section container" aria-labelledby="projects-title">
+      <section id="ventures" class="section container fade-in" aria-labelledby="ventures-title">
+        <h2 id="ventures-title">Ventures</h2>
+        <p class="section-subtitle">Companies and products I'm building.</p>
+        <div id="ventures-row" class="ventures-row"></div>
+      </section>
+
+      <section id="projects" class="section container fade-in" aria-labelledby="projects-title">
         <h2 id="projects-title">Projects</h2>
-        <p class="section-subtitle muted">Systems I've built, shipped, or actively operate.</p>
+        <p class="section-subtitle">Systems I've built, shipped, or actively operate.</p>
         <div id="projects-grid" class="grid"></div>
       </section>
 
-      <section id="skills" class="section container" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skill Map</h2>
-        <p class="section-subtitle muted">A deep-dive into what I work with day-to-day.</p>
+      <section id="skills" class="section container fade-in" aria-labelledby="skills-title">
+        <h2 id="skills-title">What I Work With</h2>
+        <p class="section-subtitle">A deep-dive into what I use day-to-day.</p>
         <div id="skills-grid" class="skills-grid"></div>
       </section>
 
-      <section id="skills" class="section container" aria-labelledby="skills-title">
-        <h2 id="skills-title">What I’m good at</h2>
-        <ul id="skills-list" class="skills"></ul>
-      </section>
-
-      <section id="contact" class="section container" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact</h2>
-        <p id="contact-preferred"></p>
-        <p id="contact-notes" class="muted"></p>
+      <section id="contact" class="section container fade-in" aria-labelledby="contact-title">
+        <h2 id="contact-title">Say Hello</h2>
+        <div class="contact-card">
+          <p id="contact-preferred"></p>
+          <p id="contact-notes" class="muted"></p>
+          <div class="contact-links" id="contact-links"></div>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <small>© <span id="year"></span> Abe Sherman</small>
+        <small>&copy; <span id="year"></span> Abe Sherman &middot; Built with care in New York</small>
       </div>
     </footer>
 
