@@ -101,9 +101,41 @@
     </div>
 
     <!-- Tawk.to Live Chat -->
-    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+    // Forward every visitor message to WhatsApp, Messenger & email
+    Tawk_API.onChatMessageVisitor = function(message) {
+      var visitorName = 'Website Visitor';
+      var visitorEmail = '';
+      try {
+        var visitor = Tawk_API.getVisitorName && Tawk_API.getVisitorName();
+        if (visitor) visitorName = visitor;
+      } catch(e) {}
+
+      fetch('/api/tawk-webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'chat:message',
+          visitor: { name: visitorName, email: visitorEmail },
+          message: { text: message }
+        })
+      }).catch(function() {});
+    };
+
+    Tawk_API.onChatStarted = function(data) {
+      fetch('/api/tawk-webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'chat:start',
+          visitor: { name: 'Website Visitor' },
+          message: { text: 'A new chat was started on your website.' }
+        })
+      }).catch(function() {});
+    };
+
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
@@ -113,7 +145,6 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!--End of Tawk.to Script-->
 
     <script src="app.js" defer></script>
   </body>
