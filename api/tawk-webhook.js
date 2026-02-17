@@ -9,6 +9,7 @@ export default async function handler(req, res) {
 
   try {
     const payload = req.body;
+    console.log("[v0] Webhook received payload:", JSON.stringify(payload));
 
     // Tawk.to sends different event types — we care about new messages from visitors
     // Payload structure varies; extract what we can
@@ -66,9 +67,13 @@ export default async function handler(req, res) {
           }
         );
         results.whatsapp = await waRes.json();
+        console.log("[v0] WhatsApp API response:", JSON.stringify(results.whatsapp));
       } catch (err) {
         results.whatsapp = { error: err.message };
+        console.error("[v0] WhatsApp API error:", err.message);
       }
+    } else {
+      console.log("[v0] WhatsApp skipped - missing env vars. Token:", !!whatsappToken, "PhoneID:", !!phoneNumberId, "Number:", !!myWhatsApp);
     }
 
     // --- Forward to Facebook Messenger via Page Send API ---
@@ -92,9 +97,13 @@ export default async function handler(req, res) {
           }
         );
         results.messenger = await fbRes.json();
+        console.log("[v0] Messenger API response:", JSON.stringify(results.messenger));
       } catch (err) {
         results.messenger = { error: err.message };
+        console.error("[v0] Messenger API error:", err.message);
       }
+    } else {
+      console.log("[v0] Messenger skipped - missing env vars. Token:", !!pageToken, "PSID:", !!myPsid);
     }
 
     // --- Also forward via email using Web3Forms as backup ---
